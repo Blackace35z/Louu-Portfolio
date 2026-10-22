@@ -1,4 +1,8 @@
 
+/* =========================================
+   LOUU — GLOBAL STYLES
+   ========================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
@@ -13,9 +17,9 @@
   --color-bg: #080908;
   --color-surface: #101210;
   --color-text: #f4f4f0;
-  --color-muted: #92968f;
+  --color-muted: #a0a49a;
   --color-accent: #c5ff4a;
-  --color-border: rgba(255, 255, 255, 0.12);
+  --color-border: rgba(255, 255, 255, 0.11);
 
   --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'DM Sans', sans-serif;
@@ -23,13 +27,17 @@
   --container-width: 1200px;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
+  min-width: 320px;
   scroll-behavior: smooth;
   scroll-padding-top: 90px;
+  background: var(--color-bg);
 }
 
 body {
@@ -37,6 +45,7 @@ body {
   min-height: 100vh;
   margin: 0;
   background: var(--color-bg);
+  font-family: var(--font-body);
 }
 
 body,
@@ -47,12 +56,18 @@ textarea {
 }
 
 button,
-a {
-  -webkit-tap-highlight-color: transparent;
+input,
+textarea {
+  font-size: inherit;
 }
 
 button {
   color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 a {
@@ -64,12 +79,6 @@ button:focus-visible,
 a:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 5px;
-}
-
-button,
-input,
-textarea {
-  font-size: inherit;
 }
 
 ::selection {
@@ -91,36 +100,6 @@ img {
   min-height: 100vh;
 }
 
-.container {
-  width: min(var(--container-width), calc(100% - 48px));
-  margin-inline: auto;
-}
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.section-label::before {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: currentColor;
-  content: '';
-}
-
-@media (max-width: 600px) {
-  .container {
-    width: calc(100% - 36px);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -130,4 +109,12 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+/* Hide the scrollbar while keeping scrolling enabled */
+html {
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }

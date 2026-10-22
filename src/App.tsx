@@ -1,6 +1,10 @@
 
 import { useEffect, useState } from 'react'
+import { Link, Route, Routes } from 'react-router-dom'
 import './App.css'
+import LifeFlow from './pages/LifeFlow'
+import FraudIntelligence from './pages/FraudIntelligence'
+import ScrollToTop from './ScrollToTop'
 
 const roles = [
   'digital experiences.',
@@ -18,22 +22,22 @@ const projects = [
     tags: ['React', 'TypeScript', 'Product Design'],
     visual: 'lifeflow',
     status: 'IN DEVELOPMENT',
-    link: '',
+    path: '/projects/lifeflow',
   },
   {
     number: '02',
     category: 'DATA & FINTECH',
-    name: 'Credit Risk Analysis',
+    name: 'Fraud Intelligence',
     description:
-      'A data-driven exploration of financial behavior, credit risk, and the insights that can help explain lending decisions.',
-    tags: ['Python', 'Data Analysis', 'Fintech'],
+      'A Python-based investigation of simulated mobile-money transactions to explore fraud patterns and detection methods.',
+    tags: ['Python', 'Pandas', 'Fraud Detection'],
     visual: 'data',
-    status: 'PROJECT EXPLORATION',
-    link: '',
+    status: 'IN DEVELOPMENT',
+    path: '/projects/fraud-intelligence',
   },
 ]
 
-function App() {
+function HomePage() {
   const [roleIndex, setRoleIndex] = useState(0)
 
   useEffect(() => {
@@ -47,17 +51,17 @@ function App() {
   return (
     <main>
       <header className="navbar container">
-        <a className="brand" href="#home" aria-label="Louu home">
+        <a className="brand" href="/#home" aria-label="Louu home">
           louu<span className="brand-dot">.</span>
         </a>
 
         <nav className="nav-links" aria-label="Main navigation">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
+          <a href="/#work">Work</a>
+          <a href="/#about">About</a>
+          <a href="/#contact">Contact</a>
         </nav>
 
-        <a className="nav-cta" href="#contact">
+        <a className="nav-cta" href="/#contact">
           Let's talk <span aria-hidden="true">↗</span>
         </a>
       </header>
@@ -72,7 +76,7 @@ function App() {
           </div>
 
           <p className="eyebrow">
-            ABDellatif AOUSAJI <span>— THE PERSON BEHIND LOUU</span>
+            ABDELLATIF AOUSAJI <span>— THE PERSON BEHIND LOUU</span>
           </p>
 
           <h1>
@@ -135,7 +139,12 @@ function App() {
 
         <div className="project-grid">
           {projects.map((project) => (
-            <article className="project-card" key={project.number}>
+            <Link
+              className="project-card"
+              key={project.number}
+              to={project.path}
+              aria-label={`Explore ${project.name}`}
+            >
               <div
                 className={`project-visual ${project.visual}-visual`}
               >
@@ -152,14 +161,17 @@ function App() {
                     <span className="preview-kicker">
                       YOUR DAY, IN FOCUS
                     </span>
+
                     <span className="preview-title">
                       Make room for
                       <br />
                       what matters.
                     </span>
+
                     <div className="preview-progress">
                       <span />
                     </div>
+
                     <span className="preview-caption">
                       SMALL STEPS. REAL PROGRESS.
                     </span>
@@ -199,6 +211,7 @@ function App() {
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
                 </div>
+
                 <span className="project-arrow" aria-hidden="true">
                   ↗
                 </span>
@@ -211,21 +224,11 @@ function App() {
               </div>
 
               <div className="project-links">
-                {project.link ? (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Explore project <span aria-hidden="true">↗</span>
-                  </a>
-                ) : (
-                  <span className="project-coming-soon">
-                    Project link coming soon
-                  </span>
-                )}
+                <span>
+                  Explore project <span aria-hidden="true">↗</span>
+                </span>
               </div>
-            </article>
+            </Link>
           ))}
         </div>
 
@@ -258,10 +261,12 @@ function App() {
               <span>01</span>
               <p>Stay curious</p>
             </div>
+
             <div>
               <span>02</span>
               <p>Build with purpose</p>
             </div>
+
             <div>
               <span>03</span>
               <p>Keep getting better</p>
@@ -269,7 +274,7 @@ function App() {
           </div>
         </div>
 
-        <a className="text-link" href="#work">
+        <a className="text-link" href="/#work">
           See what I'm exploring <span aria-hidden="true">↗</span>
         </a>
       </section>
@@ -288,23 +293,51 @@ function App() {
           opportunity to share? Let's start a conversation.
         </p>
 
-        <a className="button button-primary" href="mailto:hello@example.com">
+        <a
+          className="button button-primary"
+          href="mailto:abdellatifaousaji29@gmail.com"
+        >
           Get in touch <span aria-hidden="true">↗</span>
         </a>
 
-        <span className="contact-footnote">
-         abdelatifaousaji29@gmail.com
-        </span>
+        <a
+          className="contact-footnote"
+          href="mailto:abdellatifaousaji29@gmail.com"
+        >
+          abdellatifaousaji29@gmail.com
+        </a>
+
+        <div>
+          <a
+            className="text-link"
+            href="https://www.linkedin.com/in/abdelatif-aousaji-56209b339/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+
+          {' · '}
+
+          <a
+            className="text-link"
+            href="https://github.com/Blackace35z"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
       </section>
 
       <footer className="footer container">
-        <a className="brand" href="#home" aria-label="Back to Louu home">
+        <a className="brand" href="/#home" aria-label="Back to Louu home">
           louu<span className="brand-dot">.</span>
         </a>
 
         <p>Designed with curiosity. Built with intention.</p>
 
-        <a href="#home" className="back-to-top">
+        <a href="/#home" className="back-to-top">
           BACK TO TOP ↑
         </a>
 
@@ -313,6 +346,24 @@ function App() {
         </span>
       </footer>
     </main>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <ScrollToTop />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects/lifeflow" element={<LifeFlow />} />
+        <Route
+          path="/projects/fraud-intelligence"
+          element={<FraudIntelligence />}
+        />
+        <Route path="*" element={<HomePage />} />
+      </Routes>
+    </>
   )
 }
 
