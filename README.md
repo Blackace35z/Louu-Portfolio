@@ -2,7 +2,7 @@
 
 > A personal portfolio showcasing my work across technology, data, and digital product development.
 
-**Built by Abdellatif Aousaji** · [LinkedIn](https://www.linkedin.com/in/abdelatif-aousaji-56209b339/) · [Email](mailto:abdellatifaousaji29@gmail.com)
+**Built by AbdelAtif Aousaji** · [LinkedIn](https://www.linkedin.com/in/abdelatif-aousaji-56209b339/) · [Email](mailto:abdellatifaousaji29@gmail.com)
 
 ---
 
@@ -15,18 +15,22 @@ The goal is simple: turn curiosity into projects, ideas into experiments, and ex
 ## Featured Projects
 
 ### LifeFlow
-A productivity app concept designed to help people organize their days, focus on priorities, and make meaningful progress.
+A personal planner and budget tracker: daily tasks, income and expenses in TND, and goal tracking, with dark and light themes.
 
-**Technologies:** React · TypeScript · Product Design
+**Technologies:** React · TypeScript · Vite
+**Repository:** [Blackace35z/LifeFlow](https://github.com/Blackace35z/LifeFlow)
 
-**Status:** In development
-
-### Credit Risk Analysis
-A data-focused project exploring financial behavior, credit risk, and how analytical insights can support better-informed lending decisions.
+### Credit Risk Intelligence
+A portfolio study of credit-default classification, probability calibration and decision thresholds. Not intended for real credit decisions.
 
 **Technologies:** Python · Data Analysis · Fintech
+**Repository:** [Blackace35z/credit-risk-intelligence](https://github.com/Blackace35z/credit-risk-intelligence)
 
-**Status:** Project exploration
+### Mobile Money Fraud Intelligence
+Exploratory analysis, SQL and machine learning on synthetic mobile-money transactions, with a Power BI dashboard.
+
+**Technologies:** Python · SQL · scikit-learn · Power BI
+**Repository:** [Blackace35z/mobile-money-fraud-intelligence](https://github.com/Blackace35z/mobile-money-fraud-intelligence)
 
 ## Features
 
@@ -55,13 +59,13 @@ Install [Node.js](https://nodejs.org/) and Git.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Blackace35z/louu-portfolio.git
+   git clone https://github.com/Blackace35z/Louu-Portfolio.git
    ```
 
 2. Enter the project directory:
 
    ```bash
-   cd louu-portfolio
+   cd Louu-Portfolio
    ```
 
 3. Install dependencies:
@@ -92,10 +96,10 @@ npm run preview
 
 ## Contact
 
-**Abdellatif Aousaji — Louu**
+**AbdelAtif Aousaji — Louu**
 
 - Email: [abdellatifaousaji29@gmail.com](mailto:abdellatifaousaji29@gmail.com)
-- LinkedIn: [Abdellatif Aousaji](https://www.linkedin.com/in/abdelatif-aousaji-56209b339/)
+- LinkedIn: [AbdelAtif Aousaji](https://www.linkedin.com/in/abdelatif-aousaji-56209b339/)
 - GitHub: [Blackace35z](https://github.com/Blackace35z)
 
 ---
